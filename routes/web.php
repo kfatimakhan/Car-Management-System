@@ -92,7 +92,7 @@ Auth::routes(['verify' => true]);
 // Custom Auth Routes
 Route::get('/profile', [CustomAuthController::class, 'showProfileForm'])->name('profile.show');
 Route::put('/profile', [CustomAuthController::class, 'updateProfile'])->name('profile.update');
-Route::put('/profile/edit', [CustomAuthController::class, 'editProfile'])->name('profile.edit');
+Route::get('/profile/edit', [CustomAuthController::class, 'editProfile'])->name('profile.edit');
 
 
 // Custom Registration Routes (if needed)

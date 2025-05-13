@@ -453,7 +453,7 @@ class ReportController extends Controller
             ->get();
 
         $brandRevenue = Rental::where('status', 'completed')
-            ->whereBetween('created_at', [$startDate, $endDate])
+            ->whereBetween('rentals.created_at', [$startDate, $endDate])
             ->join('cars', 'rentals.car_id', '=', 'cars.id')
             ->selectRaw('cars.brand, SUM(rentals.total_cost) as revenue, COUNT(*) as count')
             ->groupBy('cars.brand')
